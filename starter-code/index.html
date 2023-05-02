@@ -5,61 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="style.css">
   <title>Frontend Mentor | Connect Four game</title>
 </head>
 <body>
 
   <!-- Main menu start -->
+  <div class="frontPage">
+    <div class="frontPageInner">
+      <div class="littleCirclesDiv">
+        <img class="littleCircles" src="/starter-code/assets/images/counter-red-small.svg">
+        <img class="littleCircles" src="/starter-code/assets/images/counter-yellow-small.svg">
+        <img class="littleCircles" src="/starter-code/assets/images/counter-red-small.svg">
+        <img class="littleCircles" src="/starter-code/assets/images/counter-yellow-small.svg">
+      </div>
+      <div class="plpAndGameRulesDiv">
+        <span class="plp">
+          <p>Play vs player</p> <img src="/starter-code/assets/images/player-vs-player.svg">
+        </span>
+        <span class="gameRules">
+          <p>Game rules</p>
+        </span>
+      </div>
+    </div>
+  </div>
+<div class="rulesPage">
+  <h1 class="rulesPageInner1">RULES</h1>
+  <div class="rulesPageInner2">
+    <p class="purpleText">Objective</p>
+    <p class="paragraphs">
+      Be the first player to connect 4 of the same colored discs in a row (either
+    vertically, horizontally, or diagonally).
+    </p>
+  </div>
+  <div class="rulesPageInner3">
+    <p class="purpleText">How to play</p>
+  <ol class="paragraphs">
+    <li id="li1">Red goes first in the first game.</li>
+    <li><p>Players must alternate turns, and only one disc can be dropped in each turn.</p></li>
+    <li>The game ends when there is a 4-in-a-row or a stalemate.</li>
+    <li>The starter of the previous game goes second on the next game.</li>
+  </ol>
+  </div>
+</div>
 
-   Play vs player
-   Game rules
-
-  <!-- Main menu end -->
-
-  <!-- Rules start -->
-
-  Rules
-
-  Objective
-
-  Be the first player to connect 4 of the same colored discs in a row (either 
-  vertically, horizontally, or diagonally).
-
-  How to play
-
-  Red goes first in the first game.
-  Players must alternate turns, and only one disc can be dropped in each turn. 
-  The game ends when there is a 4-in-a-row or a stalemate.
-  The starter of the previous game goes second on the next game.
-
-  <!-- Rules end -->
-
-  <!-- Ingame menu start -->
-
-  Pause
-
-  Continue game
-  Restart
-  Quit game
-
-  <!-- Ingame menu end -->
-  
-  <!-- Game board start -->
-
-  Menu
-  Restart
-
-  Player 1
-  Player 2
-
-  Player 1's turn
-  Player 2's turn
-
-  Wins
-  Play again
-
-  <!-- Game board end -->
 
 </body>
 </html>

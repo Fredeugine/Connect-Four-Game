@@ -1,0 +1,132 @@
+body{
+    background-color:  #5C2DD5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+}
+
+.frontPage{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 480px;
+    height: 435px;
+    background: #7945FF;
+    border: 3px solid #000000;
+    box-shadow: 0 10px 0 #000000;
+    border-radius: 40px;
+}
+.frontPageInner{
+    width: 400px;
+    height: 305px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.plpAndGameRulesDiv{
+    width: 400px;
+    height: 174px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.gameRules, .plp{
+    width: 400px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #FFCE67;
+    border-radius: 20px;
+}
+.gameRules{
+    background-color: white;
+}
+
+.littleCirclesDiv{
+    width: 52px;
+    height: 52px;
+}
+.littleCircles {
+    width: 20px;
+    height: 20px;
+}
+.rulesPage,.gameRules{
+    border: 3px solid #000000;
+    box-shadow: 0 10px 0 #000000;
+}
+.rulesPage {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 29px;
+    padding: 34px 30px 34px 54px;
+    width: 480px;
+    height: 537px;
+    background: #FFFFFF;
+    border-radius: 40px;
+    bottom: 58.7%;
+
+}
+.rulesPageInner1{
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 71px;
+    text-align: center;
+    width: 169px;
+    height: 71px;
+}
+
+.rulesPageInner2{
+    border: 1px solid red;
+    width: 412px;
+    height: 105px;
+}
+.rulesPageInner3{
+    width: 412px;
+    height: 219px;
+    border: 1px solid red;
+
+}
+.paragraphs{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+    mix-blend-mode: normal;
+    opacity: 0.66;
+    width: 412px;
+    height: 60px;
+}
+.purpleText{
+    color: #7945FF;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+    width: 412px;
+    height: 26px;
+}
+ol li{
+    width: 412px;
+    height: 42px;
+}
+ol{
+    width: 412px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 0;
+}
+ol #li1{
+    height: 21px;
+}
+
+/* HOW TO PLAY */
+
+
