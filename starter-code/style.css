@@ -1,5 +1,5 @@
 body{
-    background-color:  #5C2DD5;
+    background: linear-gradient(to bottom,#5C2DD5 0%,#7945FF 50%) ;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,6 +51,7 @@ body{
 .littleCirclesDiv{
     width: 52px;
     height: 52px;
+    display: block;
 }
 .littleCircles {
     width: 20px;
@@ -127,6 +128,110 @@ ol #li1{
     height: 21px;
 }
 
-/* HOW TO PLAY */
+.cleanStatePage{
+    display: none;
+    align-items: center;
+    gap: 60px;
 
-
+}
+.boardDiv{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.blackBoard{
+    position: relative;
+}
+.whiteBoard{
+    position: absolute;
+    left: 0;
+}
+.boardTop{
+    display: flex;
+    justify-content: space-between;
+}
+.menu,.restart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 24px;
+    background-color: #5C2DD5;
+    width: 86px;
+    height: 39px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+.restart{
+    width: 108px;
+    height: 39px;
+}
+.menu:hover,.restart:hover{
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.markerRed{
+  position: absolute;
+    width: 191px;
+    height: 150px;
+    left: 35%;
+}
+.whoseTurnDetails{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 40.3%;
+    z-index: 1;
+    padding-top: 30px;
+}
+.whoseTurnText{
+    height: 20px;
+    color: white;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+}
+.timerText{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 71px;
+    color: white;
+    display: flex;
+   justify-content: center;
+}
+.PlyrScrDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 4px solid;
+    width: 141px;
+    height: 187px;
+    background-color: white;
+    box-shadow: 0 12px;
+    border-radius: 24px;
+}
+.smlSvg{
+    width: 54px;
+    height: 59px;
+    margin-top: -23px;
+}
+.pl1{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+}
+.score{
+    margin-bottom: 30px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 71px;
+}
