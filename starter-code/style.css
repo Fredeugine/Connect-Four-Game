@@ -247,3 +247,25 @@ ol #li1{
 	position: absolute;
 	z-index: 1;
 }	
+.invisibleBoard{
+	border: 1px solid red;
+	display: grid;
+	position: absolute;
+	width: 632px;
+	height: 584px;
+	grid-template-columns: auto auto auto auto auto auto auto;
+	left: 0;
+	z-index: 10
+}
+.invisibleBoardDivs{
+	display: inline-block;
+	width: 84px;
+	height: inherit;
+	background-color: transparent;
+}
+.counter{
+	position: absolute;
+	z-index: 20;
+	visibility: visible;
+	left: 17px;
+}
