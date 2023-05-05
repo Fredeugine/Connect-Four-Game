@@ -13,14 +13,64 @@ function moveMarker(mouse) {
 	}
 }
 container.addEventListener('mousemove', moveMarker);
+var clickCount = 0
+var clickCount2 = 0
+var div1CounterPosition = 455
+var div1CounterPosition2 = 455
 
-	invisibleDivs.forEach(function(div, index) {
-		div.addEventListener('click',function(){
-			if(index === 0){
-				 container.removeEventListener('mousemove',moveMarker)
-				followMarker.style.transform = 'translatex(35px)';
-				counter.style.transform ='translatey(455px)'
-			}
-	})
-	})
+
+function invisible() {
+  invisibleDivs.forEach(function(div, index) {
+    div.addEventListener('click', function() {
+    	if (index === 0) {
+     	 if (clickCount < 6) {   
+         clickCount++;
+         container.removeEventListener('mousemove', moveMarker);
+          
+         followMarker.style.transform = 'translatex(35px)';
+         const newCounter = counter.cloneNode();
+         newCounter.style.setProperty('transition', 'transform 700ms ease-in-out');
+         newCounter.style.visibility = 'visible';
+         container.appendChild(newCounter); 
+          
+         setTimeout(function(){
+          newCounter.style.transform = `translatey(${div1CounterPosition}px)`;
+          div1CounterPosition -= 88;
+         },100)
+       }
+      }
+      
+      
+      if (index === 1) {
+      	if (clickCount2 < 6) {
+      		clickCount2++;
+      		container.removeEventListener('mousemove', moveMarker);
+      
+      		followMarker.style.transform = 'translatex(124px)';
+      		const newCounter = counter.cloneNode();
+      		newCounter.style.setProperty('transition', 'transform 700ms ease-in-out');
+      		newCounter.style.visibility = 'visible';
+      		container.appendChild(newCounter);
+      		newCounter.style.transform = `translatex(90px)`
+      		setTimeout(function() {
+      			newCounter.style.transform = `translate(90px, ${div1CounterPosition2}px)`;
+      			div1CounterPosition2 -= 88;
+      		}, 100)
+      	}
+      }
+    });
+  });
+}
+
+invisible();
+
+
+
+
+
+
+
+
+
+
 

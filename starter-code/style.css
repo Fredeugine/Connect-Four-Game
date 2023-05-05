@@ -266,6 +266,6 @@ ol #li1{
 .counter{
 	position: absolute;
 	z-index: 20;
-	visibility: visible;
 	left: 17px;
+	visibility: hidden;
 }
