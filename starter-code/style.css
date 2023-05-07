@@ -235,6 +235,7 @@ ol #li1{
     text-align: center;
     text-transform: uppercase;
     color: #FFFFFF;
+    cursor: pointer;
 }
 .restart{
     width: 108px;

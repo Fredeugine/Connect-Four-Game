@@ -19,8 +19,7 @@ const whoseTurnDetails = document.querySelector('.whoseTurnDetails')
 const continueBtn = document.querySelector('#menuIns')
 const quitBtn = document.querySelector('#quitGame')
 const playAgain = document.querySelector('#playAgain')
-var lastxAxis = 0
-var lastyAxis = 0
+
 
 
 PlyrvsPlyrBtn.addEventListener('click',function(){
