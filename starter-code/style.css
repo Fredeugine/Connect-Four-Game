@@ -1,5 +1,6 @@
-body{
-    background: linear-gradient(to bottom,#5C2DD5 0%,#7945FF 50%) ;
+
+body {
+    background: linear-gradient(to bottom, #5C2DD5 0%, #7945FF 50%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,7 +8,7 @@ body{
 
 }
 
-.frontPage{
+.frontPage {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -20,7 +21,8 @@ body{
     box-shadow: 0 10px 0 #000000;
     border-radius: 40px;
 }
-.frontPageInner{
+
+.frontPageInner {
     width: 400px;
     height: 305px;
     display: flex;
@@ -28,14 +30,16 @@ body{
     justify-content: space-between;
     align-items: center;
 }
-.plpAndGameRulesDiv{
+
+.plpAndGameRulesDiv {
     width: 400px;
     height: 174px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-.gameRules, .plp{
+
+.gameRules, .plp {
     width: 400px;
     height: 72px;
     display: flex;
@@ -43,43 +47,50 @@ body{
     justify-content: space-between;
     background-color: #FFCE67;
     border-radius: 20px;
-    
-}
-.plp{
-	outline: 1px solid transparent;
-}
-.gameRules{
-    background-color: white;
-    
-}
-.font, .menuIns{
-	font-style: normal;
-	font-weight: 700;
-	font-size: 24px;
-	line-height: 31px;
-	
-}
-.plp:hover, .gameRules:hover,.tickedSvg:hover,#quitGame:hover,#pause:hover,.menuIns:hover{
-	cursor: pointer;
-	opacity: 90%;
-	outline-color: pink;
+
 }
 
-.littleCirclesDiv{
+.plp {
+    outline: 1px solid transparent;
+}
+
+.gameRules {
+    background-color: white;
+
+}
+
+.font, .menuIns {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 31px;
+
+}
+
+.plp:hover, .gameRules:hover, .tickedSvg:hover, #quitGame:hover, #pause:hover, .menuIns:hover {
+    cursor: pointer;
+    opacity: 90%;
+    outline-color: pink;
+}
+
+.littleCirclesDiv {
     width: 52px;
     height: 52px;
     display: block;
 }
+
 .littleCircles {
     width: 20px;
     height: 20px;
 }
-.rulesPage,.gameRules{
+
+.rulesPage, .gameRules {
     border: 3px solid #000000;
     box-shadow: 0 10px 0 #000000;
 }
+
 .rulesPage {
-	   position: relative;
+    position: relative;
     display: none;
     flex-direction: column;
     align-items: center;
@@ -92,13 +103,14 @@ body{
     bottom: 58.7%;
     margin: 30px;
 }
-.tickedSvg{
-	position: absolute;
-	bottom: 0;
-	margin-bottom: -35px;
+
+.tickedSvg {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: -35px;
 }
 
-.rulesPageInner1{
+.rulesPageInner1 {
     font-weight: 700;
     font-size: 56px;
     line-height: 71px;
@@ -107,18 +119,20 @@ body{
     height: 71px;
 }
 
-.rulesPageInner2{
+.rulesPageInner2 {
     border: 1px solid red;
     width: 412px;
     height: 105px;
 }
-.rulesPageInner3{
+
+.rulesPageInner3 {
     width: 412px;
     height: 219px;
     border: 1px solid red;
 
 }
-.paragraphs{
+
+.paragraphs {
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
@@ -129,7 +143,8 @@ body{
     width: 412px;
     height: 60px;
 }
-.purpleText{
+
+.purpleText {
     color: #7945FF;
     font-weight: 700;
     font-size: 20px;
@@ -137,89 +152,102 @@ body{
     width: 412px;
     height: 26px;
 }
-ol li{
+
+ol li {
     width: 412px;
     height: 42px;
 }
-ol{
+
+ol {
     width: 412px;
     display: flex;
     flex-direction: column;
     gap: 10px;
     padding-left: 0;
 }
-ol #li1{
+
+ol #li1 {
     height: 21px;
 }
 
-.cleanStatePage{
+.cleanStatePage {
     display: none;
     align-items: center;
     gap: 60px;
 }
-.btmSec{
-	display: flex;
+
+.btmSec {
+    display: flex;
 }
-.wins{
-	font-style: normal;
-	font-weight: 700;
-	font-size: 56px;
-	line-height: 71px;
-	text-align: center;
-	
+
+.wins {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 71px;
+    text-align: center;
+
 }
-.playAgain{
-	width: 130px;
-	height: 39px;
-	border-radius: 24px;
-	background-color: #5C2DD5;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	cursor: pointer;
-	color: white
+
+.playAgain {
+    width: 130px;
+    height: 39px;
+    border-radius: 24px;
+    background-color: #5C2DD5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white
 }
-#bottom_bar{
-	display: none;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	width: 285px;
-	height: 160px;
-	border: 1px solid red;
-	left: 27.5%;
-	background-color: white;
-	color: black;
-	border-radius: 24px;
-	border: 3px solid black;
-	box-shadow: 0 8px black;
-	margin-top: -50px;
-	
+
+#bottom_bar {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 285px;
+    height: 160px;
+    border: 1px solid red;
+    left: 27.5%;
+    background-color: white;
+    color: black;
+    border-radius: 24px;
+    border: 3px solid black;
+    box-shadow: 0 8px black;
+    margin-top: -50px;
+
 }
-.pp1,.playAgain{
-	font-style: normal;
-	font-weight: 700;
-	font-size: 16px;
-	line-height: 20px;
-	text-align: center;
+
+.pp1, .playAgain {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
 }
-.boardDiv{
+
+.boardDiv {
     position: relative;
     display: flex;
     flex-direction: column;
 }
-.blackBoard{
+
+.blackBoard {
     position: relative;
 }
-.whiteBoard{
+
+.whiteBoard {
     position: absolute;
     left: 0;
 }
-.boardTop{
+
+.boardTop {
     display: flex;
     justify-content: space-between;
 }
-.menu,.restart{
+
+.menu, .restart {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -237,20 +265,24 @@ ol #li1{
     color: #FFFFFF;
     cursor: pointer;
 }
-.restart{
+
+.restart {
     width: 108px;
     height: 39px;
 }
-.menu:hover,.restart:hover{
+
+.menu:hover, .restart:hover {
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
-.markerRed{
-	   display: flex;
+
+.markerRed {
+    display: flex;
     position: absolute;
     left: 35%;
     margin-top: -30px;
 }
-.whoseTurnDetails{
+
+.whoseTurnDetails {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -258,7 +290,8 @@ ol #li1{
     z-index: 1;
     padding-top: 10px;
 }
-.whoseTurnText{
+
+.whoseTurnText {
     height: 20px;
     color: white;
     font-style: normal;
@@ -266,16 +299,18 @@ ol #li1{
     font-size: 14px;
     line-height: 20px;
 }
-.timerCountDown{
+
+.timerCountDown {
     font-style: normal;
     font-weight: 700;
     font-size: 56px;
     line-height: 71px;
     color: white;
     display: flex;
-   justify-content: center;
+    justify-content: center;
 }
-.PlyrScrDiv{
+
+.PlyrScrDiv {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -287,105 +322,118 @@ ol #li1{
     box-shadow: 0 12px;
     border-radius: 24px;
 }
-.smlSvg{
+
+.smlSvg {
     width: 54px;
     height: 59px;
     margin-top: -23px;
 }
-.pl1{
+
+.pl1 {
     font-style: normal;
     font-weight: 700;
     font-size: 20px;
     line-height: 26px;
 }
-.score{
+
+.score {
     margin-bottom: 30px;
     font-style: normal;
     font-weight: 700;
     font-size: 56px;
     line-height: 71px;
 }
-.bottom_bar{
-	width: 1440px;
-	height: 200px;
-	border: 1px solid red;
-	background: #5C2DD5;
-	border-radius: 60px 60px 0px 0px;
-	display: none;
+
+.bottom_bar {
+    width: 1440px;
+    height: 200px;
+    border: 1px solid red;
+    background: #5C2DD5;
+    border-radius: 60px 60px 0px 0px;
+    display: none;
 }
-.followMarker{
-	position: absolute;
-	z-index: 1;
-}	
-.invisibleBoard{
-	border: 1px solid red;
-	display: grid;
-	position: absolute;
-	width: 632px;
-	height: 584px;
-	grid-template-columns: auto auto auto auto auto auto auto;
-	left: 0;
-	z-index: 10
+
+.followMarker {
+    position: absolute;
+    z-index: 1;
 }
-.invisibleBoardDivs{
-	display: inline-block;
-	width: 84px;
-	height: inherit;
-	background-color: transparent;
+
+.invisibleBoard {
+    border: 1px solid red;
+    display: grid;
+    position: absolute;
+    width: 632px;
+    height: 584px;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    left: 0;
+    z-index: 10
 }
-.counter{
-	position: absolute;
-	z-index: 20;
-	left: 17px;
-	visibility: hidden;
+
+.invisibleBoardDivs {
+    display: inline-block;
+    width: 84px;
+    height: inherit;
+    background-color: transparent;
 }
-.menuPage{
-	position: absolute;
-	z-index: 5;
-	display: none;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: 480px;
-	height: 491px;
-	border: 1px solid red;
-	gap: 50px;
-	border: 3px solid black;
-	border-radius: 24px;
-	padding-top: 40px;
-	padding-bottom: 40px;
-	background-color: #7945FF; 
+
+.counter {
+    position: absolute;
+    z-index: 20;
+    left: 17px;
+    visibility: hidden;
 }
-.menuIns{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 400px;
-	height: 72px;
-	border: 1px solid black;
-	box-shadow: 0 14px black;
-	border-radius: 24px;
-	background-color: white;
-	cursor: pointer; 
-	
+
+.menuPage {
+    position: absolute;
+    z-index: 5;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 480px;
+    height: 491px;
+    border: 1px solid red;
+    gap: 50px;
+    border: 3px solid black;
+    border-radius: 24px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #7945FF;
 }
-#pause{
-	border: none;
-	background: none;
-	box-shadow: none;
-	font-style: normal;
-	font-weight: 700;
-	font-size: 56px;
-	line-height: 71px;
-	text-align: center;
-	color: white;
-	cursor: pointer; 
+
+.menuIns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 72px;
+    border: 1px solid black;
+    box-shadow: 0 14px black;
+    border-radius: 24px;
+    background-color: white;
+    cursor: pointer;
+
 }
-#quitGame{
-	background-color: #FD6687; 
-	color: white;
-	cursor: pointer; 
+
+#pause {
+    border: none;
+    background: none;
+    box-shadow: none;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 71px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
 }
-#quitGame:hover{
-	box-shadow: 0 14px #5C2DD5;
+
+#quitGame {
+    background-color: #FD6687;
+    color: white;
+    cursor: pointer;
+}
+
+#quitGame:hover {
+    box-shadow: 0 14px #5C2DD5;
 }
