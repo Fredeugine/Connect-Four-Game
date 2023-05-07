@@ -11,6 +11,8 @@ const PvPGamePage = document.querySelector('.cleanStatePage')
 const rulesPage = document.querySelector('.rulesPage')
 const gameRules = document.querySelector('.gameRules')
 const tickedSvg = document.querySelector('.tickedSvg')
+const menuBtn = document.querySelector('.menu')
+const menuPage = document.querySelector('.menuPage')
 var lastxAxis = 0
 var lastyAxis = 0
 
@@ -18,7 +20,7 @@ var lastyAxis = 0
 
 PlyrvsPlyrBtn.addEventListener('click',function(){
 	frontPage.style.display = 'none';
-	PvPGamePage.style.display ='flex';
+
 })
 
 gameRules.addEventListener('click',function(){
@@ -28,6 +30,11 @@ gameRules.addEventListener('click',function(){
 tickedSvg.addEventListener('click',function(){
 	rulesPage.style.display = 'none';
 	frontPage.style.display = 'flex';
+})
+menuBtn.addEventListener('click',function(){
+		menuPage.style.display = 'flex'
+		PvPGamePage.style.setProperty('opacity','50%');
+		
 })
 
 

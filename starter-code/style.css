@@ -153,7 +153,7 @@ ol #li1{
 }
 
 .cleanStatePage{
-    display: none;
+    display: flex;
     align-items: center;
     gap: 60px;
 
@@ -294,7 +294,9 @@ ol #li1{
 	visibility: hidden;
 }
 .menuPage{
-	display: flex;
+	position: absolute;
+	z-index: 5;
+	display: none;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
@@ -302,12 +304,40 @@ ol #li1{
 	height: 491px;
 	border: 1px solid red;
 	gap: 50px;
+	border: 3px solid black;
+	border-radius: 24px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	background-color: #7945FF; 
 }
-.menyIns{
+.menuIns{
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	width: 400px;
 	height: 72px;
-	text-align: center;
-	border: 1px solid red;
-box-shadow: 0 4px red;
+	border: 1px solid black;
+	box-shadow: 0 14px black;
 	border-radius: 24px;
+	background-color: white;
+	
+}
+#pause{
+	border: none;
+	background: none;
+	box-shadow: none;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 56px;
+	line-height: 71px;
+	text-align: center;
+	color: white;
+}
+#quitGame{
+	background-color: #FD6687; 
+	color: white;
+}
+#quitGame:hover{
+	cursor: pointer;
+	box-shadow: 0 14px #5C2DD5;
 }
