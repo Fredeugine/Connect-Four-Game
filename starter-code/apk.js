@@ -19,6 +19,9 @@ const whoseTurnDetails = document.querySelector('.whoseTurnDetails')
 const continueBtn = document.querySelector('#menuIns')
 const quitBtn = document.querySelector('#quitGame')
 const playAgain = document.querySelector('#playAgain')
+const restartBtn = document.querySelector('.restart')
+const restart2 = document.querySelector('#restart2')
+
 
 
 
@@ -313,7 +316,13 @@ function countDown() {
 
 
 playAgain.addEventListener('click', function() {
-	location.reload('')
+	location.reload()
+})
+restartBtn.addEventListener('click', function() {
+	location.reload()
+})
+restart2.addEventListener('click', function() {
+	location.reload()
 })
 
 
