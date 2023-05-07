@@ -107,7 +107,9 @@ function checkHorizontal(board) {
   bottomCounterDiv.style.display = 'none'
   whoseTurnDetails.style.display = 'none'
   container.removeEventListener('mousemove', moveMarker);
-  
+  invisibleDivs.forEach(function(div, index) {
+  	div.removeEventListener('click', handleClicks())
+  });
 			
    }
    if ((win === 4 || win2 === 4) && whoseTurn === 1) {
@@ -117,7 +119,9 @@ function checkHorizontal(board) {
    	 bottomCounterDiv.style.display = 'none'
    	 whoseTurnDetails.style.display = 'none'
    	 container.removeEventListener('mousemove', moveMarker);
-   	 
+   	 invisibleDivs.forEach(function(div, index) {
+   	 	div.removeEventListener('click', handleClicks())
+   	 });
    }
 		}
 	}
@@ -237,32 +241,7 @@ for (var row = 0; row <= 2; row++) {
 
 function invisible() {
   invisibleDivs.forEach(function(div, index) {
-    div.addEventListener('click', function() {
-    	
-      if (clickCounts[index] < 6) {
-        clickCounts[index]++;
-       if(whoseTurn === 0){
-       board[tile[index]][index] = 'y';
-       tile[index]--;
-       }
-       else{
-       	board[tile[index]][index] = 'x';
-       	tile[index]--;
-       }
-      
-        const newCounter = counter.cloneNode();
-        newCounter.style.setProperty('transition', 'transform 700ms ease-in-out');
-        newCounter.style.visibility = 'visible';
-        container.appendChild(newCounter);
-        newCounter.style.transform = `translatex(${(index * 87.9)}px)`;
-        checkHorizontal(board)
-        setTimeout(function() {
-          newCounter.style.transform = `translate(${(index * 87.9)}px, ${div1CounterPositions[index]}px)`;
-          div1CounterPositions[index] -= 88;
-        }, 100);
-       
-      }
-    });
+    div.addEventListener('click', handleClicks() )
   });
 }
 var whoseTurn = 1
@@ -325,6 +304,32 @@ restart2.addEventListener('click', function() {
 	location.reload()
 })
 
+function handleClicks() {
+
+	if (clickCounts[index] < 6) {
+		clickCounts[index]++;
+		if (whoseTurn === 0) {
+			board[tile[index]][index] = 'y';
+			tile[index]--;
+		}
+		else {
+			board[tile[index]][index] = 'x';
+			tile[index]--;
+		}
+
+		const newCounter = counter.cloneNode();
+		newCounter.style.setProperty('transition', 'transform 700ms ease-in-out');
+		newCounter.style.visibility = 'visible';
+		container.appendChild(newCounter);
+		newCounter.style.transform = `translatex(${(index * 87.9)}px)`;
+		checkHorizontal(board)
+		setTimeout(function() {
+			newCounter.style.transform = `translate(${(index * 87.9)}px, ${div1CounterPositions[index]}px)`;
+			div1CounterPositions[index] -= 88;
+		}, 100);
+
+	}
+});
 
 
 
