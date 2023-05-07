@@ -5,8 +5,31 @@ const counter = document.querySelector('.counter')
 const CountDown = document.querySelector(".timerCountDown");
 const bottomCounterDiv = document.querySelector('.markerRed')
 const whoseTurnText = document.querySelector('.whoseTurnText')
+const PlyrvsPlyrBtn = document.querySelector('#plp')
+const frontPage = document.querySelector('.frontPage')
+const PvPGamePage = document.querySelector('.cleanStatePage')
+const rulesPage = document.querySelector('.rulesPage')
+const gameRules = document.querySelector('.gameRules')
+const tickedSvg = document.querySelector('.tickedSvg')
 var lastxAxis = 0
 var lastyAxis = 0
+
+
+
+PlyrvsPlyrBtn.addEventListener('click',function(){
+	frontPage.style.display = 'none';
+	PvPGamePage.style.display ='flex';
+})
+
+gameRules.addEventListener('click',function(){
+		frontPage.style.display = 'none';
+	rulesPage.style.display = 'flex'
+})
+tickedSvg.addEventListener('click',function(){
+	rulesPage.style.display = 'none';
+	frontPage.style.display = 'flex';
+})
+
 
 function moveMarker(mouse) {
 	const rect = container.getBoundingClientRect();
@@ -72,6 +95,26 @@ function checkHorizontal(board) {
 		}
 	}
 	
+	for (var arr = 0; arr < board.length; arr++) {
+		for (var i = 0; i < board[arr].length; i++) {
+			if (board[arr][i+1] === 'x') {
+				
+				win++
+			} else {
+				win = 0
+			}
+			if (board[arr][i] === 'y') {
+				win2++
+			} else {
+				win2 = 0
+			}
+			if (win === 4 || win2 === 4) {
+				return console.log("Horizontal win!")
+	
+			}
+		}
+	}
+	
 // Check for diagonal wins (left to right)
 for (var row = 0; row <= 2; row++) {
 	for (var col = 0; col <= 3; col++) {
@@ -118,7 +161,7 @@ for (var row = 0; row <= 2; row++) {
 	}
 }
 	
-	
+
 }
 
 
