@@ -30,6 +30,7 @@ PlyrvsPlyrBtn.addEventListener('click', function () {
 	if (startGame) {
 		frontPage.style.display = 'none';
 		PvPGamePage.style.display = 'flex'
+		PvPGamePage.style.setProperty('transition', 'opacity 0.5s ease-in-out')
 		countDown()
 	} else {
 

@@ -269,19 +269,19 @@ height: 2.438rem;
 }
 
 .markerRed {
-  display: flex;
-  position: absolute;
-  left: 2.188rem;
-  margin-top: -1.875rem;
+	display: flex;
+	position: absolute;
+	left: 35%;
+	margin-top: -30px;
 }
 
 .whoseTurnDetails {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  left: 2.519rem;
-  z-index: 1;
-  padding-top: 0.625rem;
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	left: 40.3%;
+	z-index: 1;
+	padding-top: 10px;
 }
 
 .whoseTurnText {
