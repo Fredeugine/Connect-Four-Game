@@ -13,14 +13,27 @@ const gameRules = document.querySelector('.gameRules')
 const tickedSvg = document.querySelector('.tickedSvg')
 const menuBtn = document.querySelector('.menu')
 const menuPage = document.querySelector('.menuPage')
+const bottom_bar = document.querySelector('#bottom_bar')
+const pp1 = document.querySelector('.pp1')
+const whoseTurnDetails = document.querySelector('.whoseTurnDetails')
+const continueBtn = document.querySelector('#menuIns')
+const quitBtn = document.querySelector('#quitGame')
+const playAgain = document.querySelector('#playAgain')
 var lastxAxis = 0
 var lastyAxis = 0
 
 
-
 PlyrvsPlyrBtn.addEventListener('click',function(){
-	frontPage.style.display = 'none';
-
+	
+	var startGame = confirm("Welcome to the Connect Four Game. Press 'OK' to start.");
+	
+	if (startGame) {
+		frontPage.style.display = 'none';
+		PvPGamePage.style.display = 'flex'
+		countDown()
+	} else {
+		return
+	}
 })
 
 gameRules.addEventListener('click',function(){
@@ -34,8 +47,18 @@ tickedSvg.addEventListener('click',function(){
 menuBtn.addEventListener('click',function(){
 		menuPage.style.display = 'flex'
 		PvPGamePage.style.setProperty('opacity','50%');
-		
 })
+continueBtn.addEventListener('click',function(){
+	menuPage.style.display = 'none';
+	PvPGamePage.style.removeProperty('opacity');
+})
+quitBtn.addEventListener('click',function(){
+	PvPGamePage.style.display = 'none'
+	frontPage.style.display = 'flex';
+		menuPage.style.display = 'none';
+		PvPGamePage.style.removeProperty('opacity');
+})
+
 
 
 function moveMarker(mouse) {
@@ -76,10 +99,24 @@ function checkHorizontal(board) {
 			} else {
 				win2 = 0
 			}
-			if (win === 4 || win2 === 4) {
-				return console.log("Horizontal win!")
-				
-			}
+			if ((win === 4 || win2 === 4) && whoseTurn === 0) {
+  console.log("Horizontal win!");
+  bottom_bar.style.display = 'flex';
+  bottomCounterDiv.style.display = 'none'
+  whoseTurnDetails.style.display = 'none'
+  container.removeEventListener('mousemove', moveMarker);
+  
+			
+   }
+   if ((win === 4 || win2 === 4) && whoseTurn === 1) {
+   	console.log("Horizontal win!");
+   	bottom_bar.style.display = 'flex';
+   	pp1.innerText = 'PLAYER 2'
+   	 bottomCounterDiv.style.display = 'none'
+   	 whoseTurnDetails.style.display = 'none'
+   	 container.removeEventListener('mousemove', moveMarker);
+   	 
+   }
 		}
 	}
 
@@ -95,32 +132,26 @@ function checkHorizontal(board) {
 			} else {
 				win2 = 0
 			}
-			if (win === 4 || win2 === 4) {
-				return console.log("Horizontal win!")
-	
-			}
+				if ((win === 4 || win2 === 4) && whoseTurn === 0) {
+					console.log("vertical win!");
+					bottom_bar.style.display = 'flex';
+					 bottomCounterDiv.style.display = 'none'
+					 whoseTurnDetails.style.display = 'none'
+					 container.removeEventListener('mousemove', moveMarker);
+					 
+				}
+				if ((win === 4 || win2 === 4) && whoseTurn === 1) {
+					console.log("Vertical win!");
+					bottom_bar.style.display = 'flex';
+					pp1.innerText = 'PLAYER 2'
+					 bottomCounterDiv.style.display = 'none'
+					 whoseTurnDetails.style.display = 'none'
+					 container.removeEventListener('mousemove', moveMarker);
+					 
+				}
 		}
 	}
-	
-	for (var arr = 0; arr < board.length; arr++) {
-		for (var i = 0; i < board[arr].length; i++) {
-			if (board[arr][i+1] === 'x') {
-				
-				win++
-			} else {
-				win = 0
-			}
-			if (board[arr][i] === 'y') {
-				win2++
-			} else {
-				win2 = 0
-			}
-			if (win === 4 || win2 === 4) {
-				return console.log("Horizontal win!")
-	
-			}
-		}
-	}
+
 	
 // Check for diagonal wins (left to right)
 for (var row = 0; row <= 2; row++) {
@@ -138,9 +169,23 @@ for (var row = 0; row <= 2; row++) {
 			} else {
 				swin2 = 0
 			}
-			if (swin === 4 || swin2 === 4) {
+			if ((swin === 4 || swin2 === 4) && whoseTurn === 0) {
+				bottom_bar.style.display = 'flex';
+				bottomCounterDiv.style.display = 'none'
+				whoseTurnDetails.style.display = 'none'
+				container.removeEventListener('mousemove', moveMarker);
+				
 				return console.log("Diagonal win!")
 			}
+				if ((swin === 4 || swin2 === 4) && whoseTurn === 1) {
+					bottom_bar.style.display = 'flex';
+					pp1.innerText = 'PLAYER 2'
+					bottomCounterDiv.style.display = 'none'
+					whoseTurnDetails.style.display = 'none'
+					container.removeEventListener('mousemove', moveMarker);
+					
+					return console.log("Diagonal win!")
+				}
 		}
 	}
 }
@@ -161,9 +206,23 @@ for (var row = 0; row <= 2; row++) {
 			} else {
 				dwin2 = 0
 			}
-			if (dwin === 4 || dwin2 === 4) {
-				return console.log("Diagonal win!")
-			}
+				if ((swin === 4 || swin2 === 4) && whoseTurn === 0) {
+					bottom_bar.style.display = 'flex';
+					bottomCounterDiv.style.display = 'none'
+					whoseTurnDetails.style.display = 'none'
+					container.removeEventListener('mousemove', moveMarker);
+					
+					return console.log("Diagonal win!")
+				}
+				if ((swin === 4 || swin2 === 4) && whoseTurn === 1) {
+					bottom_bar.style.display = 'flex';
+					pp1.innerText = 'PLAYER 2'
+					bottomCounterDiv.style.display = 'none'
+					whoseTurnDetails.style.display = 'none'
+					container.removeEventListener('mousemove', moveMarker);
+					
+					return console.log("Diagonal win!")
+				}
 		}
 	}
 }
@@ -188,10 +247,6 @@ function invisible() {
        	board[tile[index]][index] = 'x';
        	tile[index]--;
        }
-       
-       
-
-
       
         const newCounter = counter.cloneNode();
         newCounter.style.setProperty('transition', 'transform 700ms ease-in-out');
@@ -233,6 +288,12 @@ function playerTurn() {
 
 
 invisible();
+
+
+   
+ 
+
+
 //Countdown
 function countDown() {
   var count = 15;
@@ -246,9 +307,15 @@ function countDown() {
   }, 1000);
   
 }
-countDown()
 
 
+
+
+
+
+playAgain.addEventListener('click', function() {
+	location.reload('')
+})
 
 
 

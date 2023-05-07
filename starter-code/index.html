@@ -32,7 +32,7 @@
   </div>
   <div class="menuPage">
   	<span id='pause' class="menuIns">PAUSE</span>
-  	<span class="menuIns">CONTINUE GAME</span>
+  	<span id="menuIns" class="menuIns">CONTINUE GAME</span>
   	<span class="menuIns">RESTART</span>
   	<span id="quitGame" class="menuIns">QUIT GAME</span>
   </div>
@@ -89,14 +89,16 @@
       <img class="blackBoard" src="/starter-code/assets/images/board-layer-black-large.svg">
       <img class="whiteBoard" src="/starter-code/assets/images/board-layer-white-large.svg">
     </div>
-    <div>
+    <div class="btmSec">
       <span class="whoseTurnDetails">
         <span class="whoseTurnText">PLAYER 1'S TURN</span>
         <span class="timerCountDown">30s</span>
       </span>
       <img class="markerRed" src="/starter-code/assets/images/turn-background-red.svg">
-      <div class='bottom_bar'>
-      	
+      <div id="bottom_bar" class='markerRed'>
+      	<span class="pp1">PLAYER 1</span>
+      	<span class="wins">WINS</span>
+      	<span id="playAgain" class='playAgain'>PLAY AGAIN</span>
       </div>
     </div>
   </div>

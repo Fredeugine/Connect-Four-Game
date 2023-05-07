@@ -8,7 +8,7 @@ body{
 }
 
 .frontPage{
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -59,7 +59,7 @@ body{
 	line-height: 31px;
 	
 }
-.plp:hover, .gameRules:hover,.tickedSvg:hover{
+.plp:hover, .gameRules:hover,.tickedSvg:hover,#quitGame:hover,#pause:hover,.menuIns:hover{
 	cursor: pointer;
 	opacity: 90%;
 	outline-color: pink;
@@ -153,10 +153,55 @@ ol #li1{
 }
 
 .cleanStatePage{
-    display: flex;
+    display: none;
     align-items: center;
     gap: 60px;
-
+}
+.btmSec{
+	display: flex;
+}
+.wins{
+	font-style: normal;
+	font-weight: 700;
+	font-size: 56px;
+	line-height: 71px;
+	text-align: center;
+	
+}
+.playAgain{
+	width: 130px;
+	height: 39px;
+	border-radius: 24px;
+	background-color: #5C2DD5;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	color: white
+}
+#bottom_bar{
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 285px;
+	height: 160px;
+	border: 1px solid red;
+	left: 27.5%;
+	background-color: white;
+	color: black;
+	border-radius: 24px;
+	border: 3px solid black;
+	box-shadow: 0 8px black;
+	margin-top: -50px;
+	
+}
+.pp1,.playAgain{
+	font-style: normal;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 20px;
+	text-align: center;
 }
 .boardDiv{
     position: relative;
@@ -199,10 +244,10 @@ ol #li1{
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 .markerRed{
-  position: absolute;
-    width: 191px;
-    height: 150px;
+	   display: flex;
+    position: absolute;
     left: 35%;
+    margin-top: -30px;
 }
 .whoseTurnDetails{
     display: flex;
@@ -210,7 +255,7 @@ ol #li1{
     position: absolute;
     left: 40.3%;
     z-index: 1;
-    padding-top: 30px;
+    padding-top: 10px;
 }
 .whoseTurnText{
     height: 20px;
@@ -320,6 +365,7 @@ ol #li1{
 	box-shadow: 0 14px black;
 	border-radius: 24px;
 	background-color: white;
+	cursor: pointer; 
 	
 }
 #pause{
@@ -332,12 +378,13 @@ ol #li1{
 	line-height: 71px;
 	text-align: center;
 	color: white;
+	cursor: pointer; 
 }
 #quitGame{
 	background-color: #FD6687; 
 	color: white;
+	cursor: pointer; 
 }
 #quitGame:hover{
-	cursor: pointer;
 	box-shadow: 0 14px #5C2DD5;
 }
