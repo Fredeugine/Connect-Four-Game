@@ -292,7 +292,7 @@ invisible();
 var a;
 //Countdown
 function countDown() {
-	var count = 5;
+	var count = 30;
 	
 	 a = setInterval(function good() {
 		count--;
