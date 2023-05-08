@@ -269,17 +269,17 @@ function playerTurn() {
 
 	if (whoseTurn === 0) {
 		whoseTurn++
-		followMarker.src = '/starter-code/assets/images/marker-red.svg';
+		followMarker.src = 'assets/images/marker-red.svg';
 		bottomCounterDiv.src = '/starter-code/assets/images/turn-background-red.svg';
-		counter.src = '/starter-code/assets/images/counter-red-large.svg';
+		counter.src = 'assets/images/counter-red-large.svg';
 		counter.class = 'counter'
 		whoseTurnText.innerText = "PLAYER 1'S TURN"
 		countDown()
 	} else {
 		whoseTurn--
-		followMarker.src = '/starter-code/assets/images/marker-yellow.svg';
-		bottomCounterDiv.src = '/starter-code/assets/images/turn-background-yellow.svg';
-		counter.src = '/starter-code/assets/images/counter-yellow-large.svg';
+		followMarker.src = 'assets/images/marker-yellow.svg';
+		bottomCounterDiv.src = 'assets/images/turn-background-yellow.svg';
+		counter.src = 'assets/images/counter-yellow-large.svg';
 		counter.class = 'counter'
 		whoseTurnText.innerText = "PLAYER 2'S TURN"
 		countDown()
