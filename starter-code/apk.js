@@ -270,7 +270,7 @@ function playerTurn() {
 	if (whoseTurn === 0) {
 		whoseTurn++
 		followMarker.src = 'assets/images/marker-red.svg';
-		bottomCounterDiv.src = '/starter-code/assets/images/turn-background-red.svg';
+		bottomCounterDiv.src = 'assets/images/turn-background-red.svg';
 		counter.src = 'assets/images/counter-red-large.svg';
 		counter.class = 'counter'
 		whoseTurnText.innerText = "PLAYER 1'S TURN"
