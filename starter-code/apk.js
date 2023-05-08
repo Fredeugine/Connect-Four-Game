@@ -106,7 +106,7 @@ function checkHorizontal(board) {
 				whoseTurnDetails.style.display = 'none'
 				pp1.innerText = 'PLAYER 2'
 				container.removeEventListener('mousemove', moveMarker);
-				
+				invisibleDivs.style.visibility = 'visible'
 
 			}
 			if ((win === 4 || win2 === 4) && whoseTurn === 1) {
@@ -114,8 +114,6 @@ function checkHorizontal(board) {
 				bottom_bar.style.display = 'flex';
 				bottomCounterDiv.style.display = 'none'
 				whoseTurnDetails.style.display = 'none'
-				
-				
 			}
 		}
 	}
@@ -228,13 +226,9 @@ function checkHorizontal(board) {
 }
 
 
-var newCounter
-
 function invisible() {
 	invisibleDivs.forEach(function (div, index) {
 		div.addEventListener('click', function handleClicks() {
-
-			
 			if (clickCounts[index] < 6) {
 				clickCounts[index]++;
 				if (whoseTurn === 0) {
@@ -245,7 +239,7 @@ function invisible() {
 					tile[index]--;
 				}
 
-				 newCounter = counter.cloneNode();
+				const newCounter = counter.cloneNode();
 				newCounter.style.setProperty('transition', 'transform 700ms ease-in-out');
 				newCounter.style.visibility = 'visible';
 				container.appendChild(newCounter);
@@ -287,13 +281,12 @@ function playerTurn() {
 }
 
 
-
 invisible();
 var a;
+
 //Countdown
 function countDown() {
-	var count = 5;
-	
+	var count = 15;
 	 a = setInterval(function good() {
 		count--;
 		CountDown.innerHTML = count + 's';
@@ -305,10 +298,9 @@ function countDown() {
 
 }
 
-const newCounters = document.querySelectorAll('.newCounter')
+
 playAgain.addEventListener('click', function () {
 	location.reload()
-	
 })
 restartBtn.addEventListener('click', function () {
 	location.reload()
