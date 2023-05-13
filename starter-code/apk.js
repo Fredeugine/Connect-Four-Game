@@ -1,6 +1,6 @@
 const followMarker = document.querySelector('.followMarker')
 const container = document.querySelector('.boardContainer')
-const invisibleDivs = document.querySelectorAll('.invisibleBoardDivs')
+const invincibleDivs = document.querySelectorAll('.invisibleBoardDivs')
 const counter = document.querySelector('.counter')
 const CountDown = document.querySelector(".timerCountDown");
 const bottomCounterDiv = document.querySelector('.markerRed')
@@ -23,12 +23,10 @@ const restartBtn = document.querySelector('.restart')
 const restart2 = document.querySelector('#restart2')
 const score1 = document.querySelector('#score1')
 const score2 = document.querySelector('#score11')
+const PvsCpu = document.querySelector('#plp2')
 
 
-
-
-PlyrvsPlyrBtn.addEventListener('click', function () {
-
+function PLP() {
 	var startGame = confirm("Welcome to the Connect Four Game. Press 'OK' to start.");
 
 	if (startGame) {
@@ -39,7 +37,14 @@ PlyrvsPlyrBtn.addEventListener('click', function () {
 	} else {
 
 	}
-})
+	btnCpu = false
+}
+function CPU(){
+	PLP()
+	btnCpu = true
+}
+PlyrvsPlyrBtn.addEventListener('click',PLP)
+PvsCpu.addEventListener('click',CPU)
 
 gameRules.addEventListener('click', function () {
 	frontPage.style.display = 'none';
@@ -64,14 +69,16 @@ quitBtn.addEventListener('click', function () {
 	PvPGamePage.style.removeProperty('opacity');
 })
 
-const rect;
+var containerRect;
 function moveMarker(mouse) {
-	rect = container.getBoundingClientRect();
-	const xAxis = mouse.clientX - rect.left;
-	if (mouse.clientX >= rect.left && xAxis < rect.width - 40) {
+	containerRect = container.getBoundingClientRect();
+	const xAxis = mouse.clientX - containerRect.left;
+	if (mouse.clientX >= containerRect.left && xAxis < containerRect.width - 40) {
 		followMarker.style.transform = `translatex(${xAxis}px`;
 	}
+	console.log(containerRect.left)
 }
+
 
 container.addEventListener('mousemove', moveMarker);
 var clickCounts = [0, 0, 0, 0, 0, 0, 0];
@@ -87,12 +94,24 @@ var board = [
 
 var tile = [5, 5, 5, 5, 5, 5, 5]
 
-
+function disableClicks(){
+    clickCounts = [10, 10,10, 10, 10, 10, 10];
+	 board = [
+		[null, null, null, null, null, null, null],
+		[null, null, null, null, null, null, null],
+		[null, null, null, null, null, null, null],
+		[null, null, null, null, null, null, null],
+		[null, null, null, null, null, null, null],
+		[null, null, null, null, null, null, null]
+	];
+	enableCountdown = false
+	 
+}
 function checkHorizontal(board) {
 	var win = 0
 	var win2 = 0
-	for (var arr = 0; arr < board.length; arr++) {
-		for (var i = 0; i < board[arr].length; i++) {
+	for (let arr = 0; arr < board.length; arr++) {
+		for (let i = 0; i < board[arr].length; i++) {
 			if (board[arr][i] === 'x') {
 				win++
 			} else {
@@ -104,14 +123,15 @@ function checkHorizontal(board) {
 				win2 = 0
 			}
 			if ((win === 4 || win2 === 4) && whoseTurn === 0) {
-				
+				win2 = 0
+				win = 0
 				console.log("Horizontal win!");
 				bottom_bar.style.display = 'flex';
 				bottomCounterDiv.style.display = 'none'
 				whoseTurnDetails.style.display = 'none'
 				pp1.innerText = 'PLAYER 2'
 				container.removeEventListener('mousemove', moveMarker);
-				
+				disableClicks()
 			}
 			if ((win === 4 || win2 === 4) && whoseTurn === 1) {
 				console.log("Horizontal win!");
@@ -120,8 +140,9 @@ function checkHorizontal(board) {
 				whoseTurnDetails.style.display = 'none'
 				container.removeEventListener('mousemove', moveMarker);
 				pp1.innerText = 'PLAYER 1'
-				
+				disableClicks()
 			}
+			
 		}
 	}
 
@@ -144,7 +165,7 @@ function checkHorizontal(board) {
 				pp1.innerText = 'PLAYER 2'
 				whoseTurnDetails.style.display = 'none'
 				container.removeEventListener('mousemove', moveMarker);
-				
+				disableClicks()
 
 			}
 			if ((win === 4 || win2 === 4) && whoseTurn === 1) {
@@ -154,17 +175,18 @@ function checkHorizontal(board) {
 				whoseTurnDetails.style.display = 'none'
 				pp1.innerText = 'PLAYER 1'
 				container.removeEventListener('mousemove', moveMarker);
+				disableClicks()
 
 			}
 		}
 	}
 
 // Check for diagonal wins (left to right)
-	for (var row = 0; row <= 2; row++) {
-		for (var col = 0; col <= 3; col++) {
+	for (let row = 0; row <= 2; row++) {
+		for (let col = 0; col <= 3; col++) {
 			swin = 0
 			swin2 = 0
-			for (var i = 0; i < 4; i++) {
+			for (let i = 0; i < 4; i++) {
 				if (board[row + i][col + i] === 'x') {
 					swin++
 				} else {
@@ -181,6 +203,7 @@ function checkHorizontal(board) {
 					whoseTurnDetails.style.display = 'none'
 					pp1.innerText = 'PLAYER 2'
 					container.removeEventListener('mousemove', moveMarker);
+					disableClicks()
 					return console.log("Diagonal win!")
 				}
 				if ((swin2 === 4 || swin2 === 4) && whoseTurn === 1) {
@@ -189,7 +212,9 @@ function checkHorizontal(board) {
 					whoseTurnDetails.style.display = 'none'
 					pp1.innerText = 'PLAYER 1'
 					container.removeEventListener('mousemove', moveMarker);
+					disableClicks()
 					return console.log("Diagonal win!")
+
 					
 				}
 			}
@@ -197,11 +222,11 @@ function checkHorizontal(board) {
 	}
 
 // Check for diagonal wins (right to left)
-	for (var row = 0; row <= 2; row++) {
-		for (var col = 3; col <= 6; col++) {
+	for (let row = 0; row <= 2; row++) {
+		for (let col = 3; col <= 6; col++) {
 			dwin = 0
 			dwin2 = 0
-			for (var i = 0; i < 4; i++) {
+			for (let i = 0; i < 4; i++) {
 				if (board[row + i][col - i] === 'x') {
 					dwin++
 				} else {
@@ -231,18 +256,13 @@ function checkHorizontal(board) {
 			}
 		}
 	}
-
-
 }
-
 
 var newCounter
 var newCounterArr = []
-function invisible() {
-	invisibleDivs.forEach(function (div, index) {
+function invincible() {
+	invincibleDivs.forEach(function (div, index) {
 		div.addEventListener('click', function handleClicks() {
-
-			
 			if (clickCounts[index] < 6) {
 				clickCounts[index]++;
 				if (whoseTurn === 0) {
@@ -283,6 +303,10 @@ function playerTurn() {
 		counter.class = 'counter'
 		whoseTurnText.innerText = "PLAYER 1'S TURN"
 		countDown()
+		if(btnCpu){
+			clickCounts = [0, 0, 0, 0, 0, 0, 0];
+		}
+		
 	} else {
 		whoseTurn--
 		followMarker.src = 'assets/images/marker-yellow.svg';
@@ -291,17 +315,24 @@ function playerTurn() {
 		counter.class = 'counter'
 		whoseTurnText.innerText = "PLAYER 2'S TURN"
 		countDown()
+		if(btnCpu){
+			clickCounts = [10, 10, 10, 10, 10, 10, 10];
+		}
+		if (enableCountdown){setTimeout(PlayWithCpu,1000)}
 	}
 }
 
 
 
-invisible();
+
+invincible();
+var enableCountdown = true
 var a;
+var count;
 //Countdown
 function countDown() {
-	var count = 30;
-	
+	count = 15;
+	if (enableCountdown){
 	 a = setInterval(function good() {
 		count--;
 		CountDown.innerHTML = count + 's';
@@ -310,15 +341,21 @@ function countDown() {
 			playerTurn()
 		}
 	}, 1000);
+	}
 
 }
 
 playAgain.addEventListener('click', function () {
 	removeCounters()
 	updateScore()
+	clickCounts = [0, 0, 0, 0, 0, 0, 0];
+	count = 15
+	enableCountdown = true
 })
 restartBtn.addEventListener('click', function () {
 	removeCounters()
+	count = 15
+	enableCountdown = true
 })
 restart2.addEventListener('click', function () {
 	menuPage.style.display = 'none';
@@ -358,11 +395,41 @@ function updateScore(){
 		scoreNum2++
 	}
 }
-// Play With Cpu
-function PlayWithCpu(){
-	const randomClicks = new MouseEvent('click',function(){
-		
-	})
+
+// Get the boxes inside the container
+
+// Function to simulate a click on a random box
+var btnCpu = true;
+function PlayWithCpu() {
+	if (btnCpu) {
+		clickCounts = [0, 0, 0, 0, 0, 0, 0];
+		// Get a random div
+		const invincibleDivIndex = Math.floor(Math.random() * invincibleDivs.length);
+		const randomDiv = invincibleDivs[invincibleDivIndex];
+
+		// Get the bounding rectangle of the random box
+		const invincibleDivRect = randomDiv.getBoundingClientRect();
+
+		// Calculate the coordinates of the center of the random box relative to the container
+		const x = invincibleDivRect.left + invincibleDivRect.width / 2 - containerRect.left;
+		const y = invincibleDivRect.top + invincibleDivRect.height / 2 - containerRect.top;
+
+		// Create a new click event
+		const clickEvent = new MouseEvent("click", {
+			view: window,
+			bubbles: true,
+			cancelable: true,
+			clientX: x,
+			clientY: y,
+		});
+
+		// Dispatch the click event on the random box
+		randomDiv.dispatchEvent(clickEvent);
+	}
 }
+
+
+
+
 
 
