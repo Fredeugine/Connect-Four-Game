@@ -64,9 +64,9 @@ quitBtn.addEventListener('click', function () {
 	PvPGamePage.style.removeProperty('opacity');
 })
 
-
+const rect;
 function moveMarker(mouse) {
-	const rect = container.getBoundingClientRect();
+	rect = container.getBoundingClientRect();
 	const xAxis = mouse.clientX - rect.left;
 	if (mouse.clientX >= rect.left && xAxis < rect.width - 40) {
 		followMarker.style.transform = `translatex(${xAxis}px`;
@@ -358,6 +358,11 @@ function updateScore(){
 		scoreNum2++
 	}
 }
-
+// Play With Cpu
+function PlayWithCpu(){
+	const randomClicks = new MouseEvent('click',function(){
+		
+	})
+}
 
 

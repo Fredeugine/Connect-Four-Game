@@ -323,7 +323,7 @@ ol{
   display: flex;
   flex-direction: column;
   position: absolute;
-  left: 40.3%;
+  left: 15rem;
   z-index: 1;
   padding-top: 10px; }
 
