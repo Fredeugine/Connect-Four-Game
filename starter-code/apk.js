@@ -21,6 +21,10 @@ const quitBtn = document.querySelector('#quitGame')
 const playAgain = document.querySelector('#playAgain')
 const restartBtn = document.querySelector('.restart')
 const restart2 = document.querySelector('#restart2')
+const score1 = document.querySelector('#score1')
+const score2 = document.querySelector('#score11')
+
+
 
 
 PlyrvsPlyrBtn.addEventListener('click', function () {
@@ -70,9 +74,9 @@ function moveMarker(mouse) {
 }
 
 container.addEventListener('mousemove', moveMarker);
-const clickCounts = [0, 0, 0, 0, 0, 0, 0];
-const div1CounterPositions = [455, 455, 455, 455, 455, 455, 455];
-const board = [
+var clickCounts = [0, 0, 0, 0, 0, 0, 0];
+var div1CounterPositions = [455, 455, 455, 455, 455, 455, 455];
+var board = [
 	[null, null, null, null, null, null, null],
 	[null, null, null, null, null, null, null],
 	[null, null, null, null, null, null, null],
@@ -100,6 +104,7 @@ function checkHorizontal(board) {
 				win2 = 0
 			}
 			if ((win === 4 || win2 === 4) && whoseTurn === 0) {
+				
 				console.log("Horizontal win!");
 				bottom_bar.style.display = 'flex';
 				bottomCounterDiv.style.display = 'none'
@@ -107,14 +112,14 @@ function checkHorizontal(board) {
 				pp1.innerText = 'PLAYER 2'
 				container.removeEventListener('mousemove', moveMarker);
 				
-
 			}
 			if ((win === 4 || win2 === 4) && whoseTurn === 1) {
 				console.log("Horizontal win!");
 				bottom_bar.style.display = 'flex';
 				bottomCounterDiv.style.display = 'none'
 				whoseTurnDetails.style.display = 'none'
-				
+				container.removeEventListener('mousemove', moveMarker);
+				pp1.innerText = 'PLAYER 1'
 				
 			}
 		}
@@ -139,6 +144,7 @@ function checkHorizontal(board) {
 				pp1.innerText = 'PLAYER 2'
 				whoseTurnDetails.style.display = 'none'
 				container.removeEventListener('mousemove', moveMarker);
+				
 
 			}
 			if ((win === 4 || win2 === 4) && whoseTurn === 1) {
@@ -146,12 +152,12 @@ function checkHorizontal(board) {
 				bottom_bar.style.display = 'flex';
 				bottomCounterDiv.style.display = 'none'
 				whoseTurnDetails.style.display = 'none'
+				pp1.innerText = 'PLAYER 1'
 				container.removeEventListener('mousemove', moveMarker);
 
 			}
 		}
 	}
-
 
 // Check for diagonal wins (left to right)
 	for (var row = 0; row <= 2; row++) {
@@ -177,12 +183,14 @@ function checkHorizontal(board) {
 					container.removeEventListener('mousemove', moveMarker);
 					return console.log("Diagonal win!")
 				}
-				if ((swin === 4 || swin2 === 4) && whoseTurn === 1) {
+				if ((swin2 === 4 || swin2 === 4) && whoseTurn === 1) {
 					bottom_bar.style.display = 'flex';
 					bottomCounterDiv.style.display = 'none'
 					whoseTurnDetails.style.display = 'none'
+					pp1.innerText = 'PLAYER 1'
 					container.removeEventListener('mousemove', moveMarker);
 					return console.log("Diagonal win!")
+					
 				}
 			}
 		}
@@ -204,7 +212,7 @@ function checkHorizontal(board) {
 				} else {
 					dwin2 = 0
 				}
-				if ((swin === 4 || swin2 === 4) && whoseTurn === 0) {
+				if ((dwin === 4 || dwin2 === 4) && whoseTurn === 0) {
 					bottom_bar.style.display = 'flex';
 					bottomCounterDiv.style.display = 'none'
 					whoseTurnDetails.style.display = 'none'
@@ -212,11 +220,11 @@ function checkHorizontal(board) {
 					container.removeEventListener('mousemove', moveMarker);
 					return console.log("Diagonal win!")
 				}
-				if ((swin === 4 || swin2 === 4) && whoseTurn === 1) {
+				if ((dwin === 4 || dwin2 === 4) && whoseTurn === 1) {
 					bottom_bar.style.display = 'flex';
-					
 					bottomCounterDiv.style.display = 'none'
 					whoseTurnDetails.style.display = 'none'
+					pp1.innerText = 'PLAYER 1'
 					container.removeEventListener('mousemove', moveMarker);
 					return console.log("Diagonal win!")
 				}
@@ -229,7 +237,7 @@ function checkHorizontal(board) {
 
 
 var newCounter
-
+var newCounterArr = []
 function invisible() {
 	invisibleDivs.forEach(function (div, index) {
 		div.addEventListener('click', function handleClicks() {
@@ -244,8 +252,8 @@ function invisible() {
 					board[tile[index]][index] = 'x';
 					tile[index]--;
 				}
-
 				 newCounter = counter.cloneNode();
+				newCounterArr.push(newCounter)
 				newCounter.style.setProperty('transition', 'transform 700ms ease-in-out');
 				newCounter.style.visibility = 'visible';
 				container.appendChild(newCounter);
@@ -305,19 +313,51 @@ function countDown() {
 
 }
 
-const newCounters = document.querySelectorAll('.newCounter')
 playAgain.addEventListener('click', function () {
-	location.reload()
-	
+	removeCounters()
+	updateScore()
 })
 restartBtn.addEventListener('click', function () {
-	location.reload()
+	removeCounters()
 })
 restart2.addEventListener('click', function () {
-	location.reload()
+	menuPage.style.display = 'none';
+	PvPGamePage.style.removeProperty('opacity');
+	removeCounters()
 })
-
-
+function removeCounters(){
+	for (let i = 0; i < newCounterArr.length; i++) {
+		newCounterArr[i].parentNode.removeChild(newCounterArr[i]);
+	}
+	newCounterArr.length = 0
+	container.addEventListener('mousemove', moveMarker);
+	clickCounts = [0, 0, 0, 0, 0, 0, 0];
+	div1CounterPositions = [455, 455, 455, 455, 455, 455, 455];
+	tile = [5, 5, 5, 5, 5, 5, 5]
+	board = [
+		[null, null, null, null, null, null, null],
+		[null, null, null, null, null, null, null],
+		[null, null, null, null, null, null, null],
+		[null, null, null, null, null, null, null],
+		[null, null, null, null, null, null, null],
+		[null, null, null, null, null, null, null]
+	];
+	bottom_bar.style.display = 'none';
+	bottomCounterDiv.style.display = 'flex'
+	whoseTurnDetails.style.display = 'flex'
+}
+var scoreNum1 = 1
+var scoreNum2 = 1
+function updateScore(){
+	if (pp1.innerHTML === 'PLAYER 2'){
+		score2.innerHTML = `${scoreNum1}`
+		scoreNum1++
+	}
+	else {
+		score1.innerHTML = `${scoreNum2}`
+		scoreNum2++
+	}
+}
 
 
 
