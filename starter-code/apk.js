@@ -83,6 +83,7 @@ function moveMarker(mouse) {
 container.addEventListener('mousemove', moveMarker);
 var clickCounts = [0, 0, 0, 0, 0, 0, 0];
 var div1CounterPositions = [455, 455, 455, 455, 455, 455, 455];
+
 var board = [
 	[null, null, null, null, null, null, null],
 	[null, null, null, null, null, null, null],
@@ -258,8 +259,10 @@ function checkHorizontal(board) {
 	}
 }
 
-var newCounter
+var newCounter;
 var newCounterArr = []
+var div1CounterPositions2 = [345, 345, 345, 345, 345, 345, 345];
+
 function invincible() {
 	invincibleDivs.forEach(function (div, index) {
 		div.addEventListener('click', function handleClicks() {
@@ -272,24 +275,52 @@ function invincible() {
 					board[tile[index]][index] = 'x';
 					tile[index]--;
 				}
-				 newCounter = counter.cloneNode();
+				newCounter = counter.cloneNode();
 				newCounterArr.push(newCounter)
 				newCounter.style.setProperty('transition', 'transform 700ms ease-in-out');
 				newCounter.style.visibility = 'visible';
 				container.appendChild(newCounter);
-				newCounter.style.transform = `translatex(${(index * 87.9)}px)`;
+
+				if (window.innerWidth < 700) {
+					newCounter.style.transform = `translatex(${(index * 65)}px)`;
+				} else {
+					newCounter.style.transform = `translatex(${(index * 87.9)}px)`;
+				}
+
 				checkHorizontal(board)
 				setTimeout(function () {
-					newCounter.style.transform = `translate(${(index * 87.9)}px, ${div1CounterPositions[index]}px)`;
-					div1CounterPositions[index] -= 88;
+					if (window.innerWidth < 700) {
+						newCounter.style.transform = `translate(${(index * 65)}px, ${div1CounterPositions2[index]}px)`;
+						div1CounterPositions2[index] -= 68;
+					} else {
+						newCounter.style.transform = `translate(${(index * 87.9)}px, ${div1CounterPositions[index]}px)`;
+						div1CounterPositions[index] -= 88;
+					}
 				}, 100);
 				clearInterval(a);
 				playerTurn()
-
 			}
 		});
 	});
 }
+
+window.addEventListener('resize', function(){
+	newCounterArr.forEach(function(counter, index) {
+		if(window.innerWidth >= 700){
+			div1CounterPositions2 = div1CounterPositions.map(pos => pos);
+			counter.style.transform = `translatex(${(index * 87.9)}px)`;
+			counter.style.transform = `translate(${(index * 87.9)}px, ${div1CounterPositions[index]}px)`;
+		}
+
+	})
+})
+
+
+
+
+
+
+// check for window resize and reposition counters
 
 var whoseTurn = 1
 
