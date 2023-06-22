@@ -1,0 +1,487 @@
+body {
+  background: linear-gradient(to bottom, #5C2DD5 0%, #7945FF 50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; }
+
+.frontPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  width: 30rem;
+  height: 27.1875rem;
+  background: #7945FF;
+  border: 0.1875rem solid #000000;
+  box-shadow: 0 0.625rem 0 #000000;
+  border-radius: 2.5rem; }
+
+.frontPageInner {
+  width: 25rem;
+  height: 19.0625rem;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  align-items: center; }
+
+.plpAndGameRulesDiv {
+  width: 25rem;
+  height: 10.875rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: space-between;}
+
+.gameRules {
+  width: 25rem;
+  height: 4.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 1.25rem;
+  background-color: white;
+  border: 0.1875rem solid #000000;
+  box-shadow: 0 0.6rem 0 #000000;
+}
+  .gameRules:hover,.plp:hover {
+    box-shadow: 0 0.6rem 0 #5C2DD5;
+    cursor: pointer;
+    opacity: 90%;
+    outline-color: pink; }
+#plp2{
+  background-color: #FD6687;
+}
+.plp {
+  width: 25rem;
+  height: 4.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #FFCE67;
+  border-radius: 1.25rem;
+  border: 0.1875rem solid #000000;
+  box-shadow: 0 0.6rem 0 #000000;
+   }
+  .plp:hover {
+    cursor: pointer;
+    opacity: 90%;
+    outline-color: pink; }
+
+.font {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.9375rem; }
+
+.menuIns {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.9375rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25rem;
+  height: 4.5rem;
+  border: 0.0625rem solid black;
+  box-shadow: 0 0.875rem black;
+  border-radius: 1.5rem;
+  background-color: white;
+  cursor: pointer;
+}
+
+  .menuIns:hover {
+    cursor: pointer;
+    opacity: 90%;
+    outline-color: pink; }
+
+.tickedSvg {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: -2.1875rem; }
+  .tickedSvg:hover {
+    cursor: pointer;
+    opacity: 90%;
+    outline-color: pink; }
+
+#quitGame {
+  background-color: #FD6687;
+  color: white;
+  cursor: pointer; }
+  #quitGame:hover {
+    cursor: pointer;
+    opacity: 90%;
+    outline-color: pink;
+    box-shadow: 0 0.875rem #5C2DD5; }
+
+#pause {
+  border: none;
+  background: none;
+  box-shadow: none;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 3.5rem;
+  line-height: 4.4375rem;
+  text-align: center;
+  color: white;
+  cursor: pointer; }
+  #pause:hover {
+    cursor: pointer;
+    opacity: 90%;
+    outline-color: pink; }
+
+.littleCirclesDiv {
+  width: 3.25rem;
+  height: 3.25rem;
+  display: block; }
+
+.littleCircles {
+  width: 1.25rem;
+  height: 1.25rem; }
+
+.rulesPage {
+  border: 0.1875rem solid #000000;
+  box-shadow: 0 0.625rem 0 #000000;
+  position: relative;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.8125rem;
+  padding: 2.125rem 1.875rem 2.125rem 3.375rem;
+  width: 30rem;
+  height: 33.5625rem;
+  background: #FFFFFF;
+  border-radius: 2.5rem;
+  bottom: 3.6875rem;
+  margin: 1.875rem; }
+
+.rulesPageInner1 {
+  font-weight: 700;
+  font-size: 3.5rem;
+  line-height: 4.4375rem;
+  text-align: center;
+  width: 10.5625rem;
+  height: 4.4375rem; }
+
+.rulesPageInner2 {
+  border: 0.0625rem solid red;
+  width: 25.75rem;
+  height: 6.5625rem; }
+
+.rulesPageInner3 {
+  width: 25.75rem;
+  height: 13.69rem; }
+
+.paragraphs {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  color: #000000;
+  mix-blend-mode: normal;
+  opacity: 0.66;
+  width: 25.75rem;
+  height: 3.75rem; }
+
+.purpleText {
+  color: #7945FF;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.625rem;
+  width: 25.75rem;
+  height: 1.625rem; }
+
+ol{
+  width: 25.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  padding-left: 0; }
+  ol li {
+    width: 25.75rem;
+    height: 2.625rem; }
+  ol #li1 {
+    height: 1.313rem; }
+
+.cleanStatePage {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 3.75rem;
+  width: 100%
+}
+
+
+.btmSec {
+  display: flex; }
+
+.wins {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 3.5rem;
+  line-height: 4.438rem;
+  text-align: center; }
+
+.playAgain {
+  width: 8.125rem;
+  height: 2.438rem;
+  border-radius: 1.5rem;
+  background-color: #5C2DD5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  text-align: center; }
+
+#bottom_bar {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 17.813rem;
+  height: 10rem;
+  left: 27.5%;
+  background-color: white;
+  color: black;
+  border-radius: 1.5rem;
+  border: 0.188rem solid black;
+  box-shadow: 0 0.5rem black;
+  margin-top: -3.125rem; }
+
+.pp1 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  text-align: center; }
+
+.boardDiv {
+  position: relative;
+  display: flex;
+  flex-direction: column; }
+
+.blackBoard {
+  position: relative; }
+
+.whiteBoard {
+  position: absolute;
+  left: 0; }
+
+.boardTop {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.063rem solid black;
+  border-radius: 1.5rem;
+  background-color: #5C2DD5;
+  width: 5.375rem;
+  height: 2.438rem;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  cursor: pointer; }
+  .menu:hover {
+    box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25); }
+
+.restart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.063rem solid black;
+  border-radius: 1.5rem;
+  background-color: #5C2DD5;
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  cursor: pointer;
+  width: 6.75rem;
+  height: 2.438rem; }
+  .restart:hover {
+    box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25); }
+
+.markerRed {
+  display: flex;
+  position: absolute;
+  left: 35%;
+  margin-top: -30px; }
+
+.whoseTurnDetails {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 15rem;
+  z-index: 1;
+  padding-top: 10px; }
+
+.whoseTurnText {
+  height: 1.25rem;
+  color: white;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.25rem; }
+
+.timerCountDown {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 3.5rem;
+  line-height: 4.4375rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+.Plut{
+  display: none;
+  justify-content: space-between;
+  width: auto;
+  height: auto;
+  margin-bottom: 2rem;
+  padding: 0;
+}
+
+.PlyrScrDins,.PlyrScrDins2{
+  display: none;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 2rem;
+  align-items: center;
+  width: 27rem;
+  height: 6.25rem;
+  max-width: 17rem;
+  max-height: 6.25rem;
+  border: 0.25rem solid;
+  background-color: white;
+  box-shadow: 0 0.75rem;
+  border-radius: 1.5rem;
+}
+
+.smlSvg2 {
+  width: 3.375rem;
+  height: 3.6875rem;
+  margin-top: -1.438rem;
+  margin-left: -1.7rem;
+}
+
+.Tpl1 {
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.625rem;
+}
+
+.score2 {
+  margin-bottom: 1.875rem;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 3.5rem;
+  line-height: 4.4375rem;
+  margin-top: 1.5rem;
+  margin-left: 1.5rem;
+}
+
+
+
+
+.PlyrScrDiv{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: 0.25rem solid;
+  width: 8.813rem;
+  height: 11.688rem;
+  background-color: white;
+  box-shadow: 0 0.75rem;
+  border-radius: 1.5rem; }
+
+.smlSvg {
+  width: 3.375rem;
+  height: 3.6875rem;
+  margin-top: -1.438rem;
+}
+
+.pl1 {
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.625rem; }
+
+.score {
+  margin-bottom: 1.875rem;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 3.5rem;
+  line-height: 4.4375rem; }
+
+.bottom_bar {
+  width: 90rem;
+  height: 12.5rem;
+  background: #5C2DD5;
+  border-radius: 3.75rem 3.75rem 0 0;
+  display: none; }
+
+.followMarker {
+  position: absolute;
+  z-index: 1; }
+
+.invisibleBoard {
+  display: grid;
+  position: absolute;
+  width: 39.5rem;
+  height: 36.5rem;
+  grid-template-columns: auto auto auto auto auto auto auto;
+  left: 0;
+  z-index: 10; }
+
+.invisibleBoardDivs {
+  display: inline-block;
+  width: 5.25rem;
+  height: inherit;
+  background-color: transparent; }
+
+.counter {
+  position: absolute;
+  z-index: 20;
+  left: 1.063rem;
+  visibility: hidden; }
+
+.menuPage {
+  position: absolute;
+  z-index: 5;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30rem;
+  height: 30.6875rem;
+  gap: 3.125rem;
+  border: 0.1875rem solid black;
+  border-radius: 1.5rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  background-color: #7945FF; }
+
+/*# sourceMappingURL=style.css.map */
