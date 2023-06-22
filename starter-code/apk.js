@@ -304,16 +304,32 @@ function invincible() {
 	});
 }
 
-window.addEventListener('resize', function(){
-	newCounterArr.forEach(function(counter, index) {
-		if(window.innerWidth >= 700){
-			div1CounterPositions2 = div1CounterPositions.map(pos => pos);
-			counter.style.transform = `translatex(${(index * 87.9)}px)`;
-			counter.style.transform = `translate(${(index * 87.9)}px, ${div1CounterPositions[index]}px)`;
-		}
 
-	})
-})
+// var otherArr;
+// window.addEventListener('resize',function (){
+// 	newCounterArr.forEach(function (counts,index){
+// 		div1CounterPositions2 = [345, 345, 345, 345, 345, 345, 345];
+// 		if (window.innerWidth <= 700) {
+// 			counts.style.transform = `translate(${(index * 65)}px, ${div1CounterPositions2[index]}px)`;
+// 		}
+// 	})
+// })
+//
+//
+// otherArr = newCounterArr.map(function (all){
+// 	return all
+// })
+//
+// window.addEventListener('resize',function (){
+// 	otherArr.forEach(function (counts,index){
+// 		if (window.innerWidth > 700){
+// 			div1CounterPositions = [455, 455, 455, 455, 455, 455, 455];
+// 			counts.style.transform = `translate(${(index * 87.9)}px, ${div1CounterPositions[index]}px)`;
+// 		}
+// 	})
+//
+// })
+
 
 
 
