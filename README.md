@@ -1,4 +1,4 @@
-#- Connect Four game
+#- Connect Four game Tri it out! https://fredeugine.github.io/Connect-Four-Game/
 
 ![Design preview for the Connect Four game coding challenge](./preview.jpg)
 
